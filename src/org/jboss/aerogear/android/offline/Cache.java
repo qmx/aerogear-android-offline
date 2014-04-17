@@ -20,7 +20,7 @@ import org.jboss.aerogear.android.Callback;
 
 public interface Cache<T> {
 
-    void init(Callback<T> callback);
+    void init(Callback<? extends Cache> callback);
 
     void add(String key, T data);
 
