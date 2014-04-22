@@ -1,4 +1,4 @@
-aerogear-android-push
+aerogear-android-offline
 ================
 
 ...
