@@ -20,32 +20,29 @@ import android.support.v4.util.LruCache;
 import org.jboss.aerogear.android.Callback;
 import org.jboss.aerogear.android.offline.Cache;
 
-public class MemoryCache<T> implements Cache<T> {
+public class MemoryCache<K, V> implements Cache<K, V> {
 
     private static final int DISK_CACHE_SIZE = 1024 * 1024 * 10; // 10MB
-    private LruCache<String, T> cache;
-
-    public MemoryCache() {
-    }
+    private LruCache<K, V> cache;
 
     @Override
     public void init(Callback callback) {
-        cache = new LruCache<String, T>(DISK_CACHE_SIZE);
+        cache = new LruCache<K, V>(DISK_CACHE_SIZE);
         callback.onSuccess(this);
     }
 
     @Override
-    public void add(String key, T data) {
+    public void add(K key, V data) {
         cache.put(key, data);
     }
 
     @Override
-    public void remove(String key) {
+    public void remove(K key) {
         cache.remove(key);
     }
 
     @Override
-    public T get(String key) {
+    public V get(K key) {
         return cache.get(key);
     }
 

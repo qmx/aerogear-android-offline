@@ -18,14 +18,14 @@ package org.jboss.aerogear.android.offline;
 
 import org.jboss.aerogear.android.Callback;
 
-public interface Cache<T> {
+public interface Cache<K, V> {
 
     void init(Callback<? extends Cache> callback);
 
-    void add(String key, T data);
+    void add(K key, V value);
 
-    void remove(String key);
+    void remove(K key);
 
-    T get(String key);
+    V get(K key);
 
 }
