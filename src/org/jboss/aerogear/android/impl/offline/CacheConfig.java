@@ -16,36 +16,44 @@
  */
 package org.jboss.aerogear.android.impl.offline;
 
-import org.jboss.aerogear.android.offline.CacheType;
+import org.jboss.aerogear.android.core.Config;
+import org.jboss.aerogear.android.offline.OnCacheCreatedListener;
 
-public class CacheConfig {
+import java.util.Collection;
+import java.util.HashSet;
 
-    private int cacheSize;
-    private CacheType cacheType;
-    private boolean encrypted;
+public abstract class CacheConfig<CFG extends CacheConfig<CFG>> implements Config<CFG> {
 
-    public int getCacheSize() {
-        return cacheSize;
+    private String name;
+    private Collection<OnCacheCreatedListener> listeners;
+
+    public CacheConfig() {
+        listeners = new HashSet<OnCacheCreatedListener>();
     }
 
-    public void setCacheSize(int cacheSize) {
-        this.cacheSize = cacheSize;
+    @Override
+    public String getName() {
+        return name;
     }
 
-    public CacheType getCacheType() {
-        return cacheType;
+    @Override
+    public CFG setName(String name) {
+        this.name = name;
+        return (CFG) this;
     }
 
-    public void setCacheType(CacheType cacheType) {
-        this.cacheType = cacheType;
+    public Collection<OnCacheCreatedListener> getOnCacheCreatedListeners() {
+        return listeners;
     }
 
-    public boolean isEncrypted() {
-        return encrypted;
+    public CFG addOnCacheCreatedListener(OnCacheCreatedListener listener) {
+        this.listeners.add(listener);
+        return (CFG) this;
     }
 
-    public void setEncrypted(boolean encrypted) {
-        this.encrypted = encrypted;
+    public CFG setOnCacheCreatedListeners(Collection<OnCacheCreatedListener> listeners) {
+        listeners.addAll(listeners);
+        return (CFG) this;
     }
 
 }
