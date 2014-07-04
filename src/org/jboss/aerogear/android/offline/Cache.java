@@ -22,7 +22,7 @@ public interface Cache<K, V> {
 
     void init(Callback<? extends Cache> callback);
 
-    void add(K key, V value);
+    void put(K key, V value);
 
     void remove(K key);
 

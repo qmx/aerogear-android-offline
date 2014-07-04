@@ -32,7 +32,7 @@ public class MemoryCache<K, V> implements Cache<K, V> {
     }
 
     @Override
-    public void add(K key, V data) {
+    public void put(K key, V data) {
         cache.put(key, data);
     }
 
