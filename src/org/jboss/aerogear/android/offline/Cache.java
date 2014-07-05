@@ -16,11 +16,7 @@
  */
 package org.jboss.aerogear.android.offline;
 
-import org.jboss.aerogear.android.Callback;
-
 public interface Cache<K, V> {
-
-    void init(Callback<? extends Cache> callback);
 
     void add(K key, V value);
 
