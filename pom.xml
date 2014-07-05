@@ -57,7 +57,7 @@
     <properties>
         <!-- Project depencies verions -->
         <android.version>4.1.1.4</android.version>
-        <aerogear.android.version>1.4.0-SNAPSHOT</aerogear.android.version>
+        <aerogear.android.version>1.4.0</aerogear.android.version>
         <android.support.version>[19.1,)</android.support.version>
 
         <!-- Plugins versions -->
