@@ -16,7 +16,7 @@
  */
 package org.jboss.aerogear.android;
 
-import org.jboss.aerogear.android.core.ConfigurationProvider;
+import org.jboss.aerogear.ConfigurationProvider;
 import org.jboss.aerogear.android.impl.offline.CacheConfig;
 import org.jboss.aerogear.android.impl.offline.MemoryCacheConfig;
 import org.jboss.aerogear.android.impl.offline.MemoryCacheConfigurationProvider;
