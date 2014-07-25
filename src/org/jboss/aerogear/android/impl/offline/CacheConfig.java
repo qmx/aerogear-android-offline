@@ -16,7 +16,7 @@
  */
 package org.jboss.aerogear.android.impl.offline;
 
-import org.jboss.aerogear.android.core.Config;
+import org.jboss.aerogear.Config;
 import org.jboss.aerogear.android.offline.OnCacheCreatedListener;
 
 import java.util.Collection;

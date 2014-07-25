@@ -16,9 +16,10 @@
  */
 package org.jboss.aerogear.android.impl.offline;
 
+import org.jboss.aerogear.Config;
 import org.jboss.aerogear.android.offline.OnCacheCreatedListener;
 
-public class MemoryCacheConfig extends CacheConfig<MemoryCacheConfig> {
+public class MemoryCacheConfig extends CacheConfig<MemoryCacheConfig> implements Config<MemoryCacheConfig> {
 
     public <K, V> MemoryCache<K, V> createMemoryCache() {
         MemoryCache<K, V> memoryCache = new MemoryCache<K, V>();

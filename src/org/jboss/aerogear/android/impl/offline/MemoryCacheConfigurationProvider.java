@@ -16,7 +16,8 @@
  */
 package org.jboss.aerogear.android.impl.offline;
 
-import org.jboss.aerogear.android.core.ConfigurationProvider;
+
+import org.jboss.aerogear.ConfigurationProvider;
 
 public class MemoryCacheConfigurationProvider implements ConfigurationProvider<MemoryCacheConfig> {
 
